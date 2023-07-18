@@ -10,9 +10,12 @@ app.use(function(req, res, next) {
 
 app.set('port', (process.env.PORT || 5000));
 
-app.get('/', function(req, res, next) {
-  if (req.query.feedURL) {
-    Feed.load(req.query.feedURL, function(err, rss){
+app.get('/api', function(req, res, next) {
+  if (req.query.url) {
+    var ll = encodeURI(req.query.url)
+    console.log(`接收到链接：${req.query.url},
+    编码之后为：${ll}`)
+    Feed.load(ll, function(err, rss){
       if (err) {
         res.send({ 'error': 'An error has occurred' });
       } else {
@@ -20,7 +23,7 @@ app.get('/', function(req, res, next) {
       }
     });
   } else {
-    res.status(400).send({ 'error': 'feedURL is required' });
+    res.status(400).send({ 'error': 'url is required' });
   }
 });
 
