@@ -5,7 +5,7 @@
 
 #### 一键部署此api到vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/petra1026/RSS-to-JSON/tree/master)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/amzayo/RSS-to-JSON)
 
 
 A `GET` API to convert your rss feed into JSON.
